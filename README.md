@@ -9,4 +9,4 @@ We have finished the setter and getter methods of these variables as well.
 
 3. We have not met any problems in coding so far, so there is NOTHING we implemented but doesn't work currently.
 
-4. commands: 
+4. commands:  
