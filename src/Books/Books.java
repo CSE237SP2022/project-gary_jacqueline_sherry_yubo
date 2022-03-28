@@ -3,13 +3,15 @@ package Books;
 
 public class Books {
 	private String name;
+	private String author;
     private int id;
     private String language;
     private int borrowCount;
     private boolean isBorrowed;
     
-    public Books(String name, int id, String language, int borrowCount, boolean isBorrowed) {
+    public Books(String name, int id, String language, int borrowCount, boolean isBorrowed, String author) {
         this.name = name;
+        this.author = author;
         this.id = id;
         this.language = language;
         this.borrowCount = borrowCount;
@@ -22,6 +24,14 @@ public class Books {
     
     public void setName(String name) {
     	this.name = name;
+    }
+    
+    public String getAuthor() {
+    	return author;
+    }
+    
+    public void setAuthor(String author) {
+    	this.author = author;
     }
     
     public int getId() {
@@ -63,6 +73,10 @@ public class Books {
     
     public void modifyName(Books book, String newName) {
     	book.name = newName;
+    }
+    
+    public void modifyAuthor(Books book, String newAuthor) {
+    	book.author = newAuthor;
     }
     
     public void modifyLanguage(Books book, String newLanguage) {
