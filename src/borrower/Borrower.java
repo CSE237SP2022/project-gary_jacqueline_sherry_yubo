@@ -8,4 +8,8 @@ public class Borrower {
 		this.borrowerId = id;
 		this.name = name;
 	}
+	
+	public void setName(String newName) {
+		this.name = newName;
+	}
 }
