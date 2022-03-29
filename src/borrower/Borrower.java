@@ -26,4 +26,12 @@ public class Borrower {
 	public void setName(String newName) {
 		this.name = newName;
 	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public int getId() {
+		return this.borrowerId;
+	}
 }
