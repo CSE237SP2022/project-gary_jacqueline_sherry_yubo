@@ -4,7 +4,7 @@ package Books;
 public class Books {
 	private String name;
 	private String author;
-    private int id;
+    private int id;	// unique identifier of the book
     private String language;
     private int borrowCount;
     private boolean isBorrowed;
@@ -62,32 +62,12 @@ public class Books {
         return isBorrowed;
     }
     
-    public void borrowBook(Books book) {
-    	book.isBorrowed = true;
-    	book.borrowCount ++;
+    public void borrowBook() {
+    	isBorrowed = true;
+    	borrowCount ++;
     }
     
-    public void returnBook(Books book) {
-    	book.isBorrowed = false;
+    public void returnBook() {
+    	isBorrowed = false;
     }
-    
-    public void modifyName(Books book, String newName) {
-    	book.name = newName;
-    }
-    
-    public void modifyAuthor(Books book, String newAuthor) {
-    	book.author = newAuthor;
-    }
-    
-    public void modifyLanguage(Books book, String newLanguage) {
-    	book.language = newLanguage;
-    }
-    
-    public void resetBorrowCount(Books book) {
-    	book.borrowCount = 0;
-    }
-    
-    
-    
-
 }
