@@ -21,12 +21,12 @@ public class Library {
 		bookList.remove(book.getId());
 	}	
 
-	public void addBorrower(Books borrower) {
-		bookList.put(borrower.getId(), borrower);
+	public void addBorrower(Borrower borrower) {
+		borrowerList.put(borrower.getId(), borrower);
 	}
 	
 	public void removeBorrower(Borrower borrower) {
-		bookList.remove(borrower.getId());
+		borrowerList.remove(borrower.getId());
 	}
 	
 	public void borrowBook(Integer bookId, Integer borrowerId) {
