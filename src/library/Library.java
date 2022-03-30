@@ -32,7 +32,9 @@ public class Library {
 	public void borrowBook(Integer bookId, Integer borrowerId) {
 		if(borrowerList.containsKey(borrowerId) && bookList.containsKey(bookId)) {
 			Books book = bookList.get(bookId);
+			Borrower borrower = borrowerList.get(borrowerId);
 			book.borrowBook();
+			System.out.println(borrower.getName() + " borrows " + book.getName());
 		}
 		else {
 			
@@ -43,6 +45,7 @@ public class Library {
 		if(bookList.containsKey(bookId)) {
 			Books book = bookList.get(bookId);
 			book.returnBook();
+			System.out.println(book.getName() + " is returned");
 		}
 	}
 }
