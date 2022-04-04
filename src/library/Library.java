@@ -41,6 +41,14 @@ public class Library {
 		}
 	}
 	
+	public HashMap<Integer, Books> getBooksList() {
+		return bookList;
+	}
+	
+	public HashMap<Integer, Borrower> getBorrowerList() {
+		return borrowerList;
+	}
+	
 	public void returnBook(Integer bookId) {
 		if(bookList.containsKey(bookId)) {
 			Books book = bookList.get(bookId);
