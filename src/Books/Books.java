@@ -59,14 +59,29 @@ public class Books {
     	this.author = author;
     }
     
+    /*
+     * getId(): get id of object
+     * parameter: none
+     * return: id
+     */
     public int getId() {
     	return id;
     }
     
+    /*
+     * setId(): set ID of object
+     * parameter: id
+     * return: none
+     */
     public void setId(int id) {
     	this.id = id;
     }
 	
+    /*
+     * getLanguage(): get language of object
+     * parameter: none
+     * return: language 
+     */
     public String getLanguage() {
     	return language;
     }
