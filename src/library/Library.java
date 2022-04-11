@@ -56,6 +56,7 @@ public class Library {
 		return borrowerList;
 	}
 	
+	// This method is to record the book has been returned.
 	public void returnBook(Integer bookId) {
 		if(bookList.containsKey(bookId)) {
 			Books book = bookList.get(bookId);
