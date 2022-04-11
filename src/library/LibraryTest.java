@@ -41,9 +41,7 @@ class LibraryTest {
 	
 	@Test
 	void testRemoveBook() {
-//		Books book1 = new Books("The Promise", 211, "English", 10, false, "Damon Galgut");
-//		Books book2 = new Books("The Last Cuentista", 238, "English", 15, false, "Donna Barba Higuera");
-//		Books book3 = new Books("The Book of Lost Names", 285, "English", 20, false, "Kristin Harmel");
+		//test remove book, add one book first
 		Books book4 = new Books("George and Lizzie", 290, "Germany", 5, false, "Nancy Pearl");
 		Library Mylibrary = new Library();
 		
