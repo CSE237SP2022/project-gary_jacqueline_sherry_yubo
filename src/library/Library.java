@@ -18,6 +18,7 @@ public class Library {
 		bookList.put(book.getId(), book);
 	}
 	
+	// This method is to remove books from library
 	public void removeBook(Books book) {
 		bookList.remove(book.getId());
 	}	
