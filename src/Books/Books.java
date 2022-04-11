@@ -9,6 +9,11 @@ public class Books {
     private int borrowCount;
     private boolean isBorrowed;
     
+    /*
+     * Constructor:
+     * parameter: String name, int id, String language, int borrowCount, boolean isBorrowed, String author
+     * return: none
+     */
     public Books(String name, int id, String language, int borrowCount, boolean isBorrowed, String author) {
         this.name = name;
         this.author = author;
@@ -18,6 +23,9 @@ public class Books {
         this.isBorrowed = false;
     }
     
+    /*
+     * 
+     */
     public String getName() {
     	return name;
     }
