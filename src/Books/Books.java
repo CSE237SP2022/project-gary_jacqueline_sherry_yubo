@@ -104,9 +104,15 @@ public class Books {
     	return borrowCount;
     }
     
+    /*
+     * setBorrowCount(): set BorrowCount of object
+     * parameter: borrowCount
+     * return: none
+     */
     public void setBorrowCount(int borrowCount) {
     	this.borrowCount = borrowCount;
     }
+    
     
     public boolean isBorrowed() {
         return isBorrowed;
