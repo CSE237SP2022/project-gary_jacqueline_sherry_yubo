@@ -122,11 +122,21 @@ public class Books {
         return isBorrowed;
     }
     
+    /*
+     * borrowBook(): add up borrowCount if isBorrowed set to true
+     * parameter: none
+     * return: none
+     */
     public void borrowBook() {
     	isBorrowed = true;
     	borrowCount ++;
     }
     
+    /*
+     * returnBook(): set isBorrowed to false
+     * parameter: none
+     * return: none
+     */
     public void returnBook() {
     	isBorrowed = false;
     }
