@@ -41,6 +41,11 @@ public class Books {
     	this.name = name;
     }
     
+    /*
+     * getAuthor(): get author of object
+     * parameter: none
+     * return: author
+     */
     public String getAuthor() {
     	return author;
     }
