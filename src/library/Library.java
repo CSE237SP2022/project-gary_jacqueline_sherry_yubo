@@ -23,9 +23,12 @@ public class Library {
 		bookList.remove(book.getId());
 	}	
 
+	// This method is to add borrower who borrowed book from library
 	public void addBorrower(Borrower borrower) {
 		borrowerList.put(borrower.getId(), borrower);
 	}
+	
+	
 	
 	public void removeBorrower(Borrower borrower) {
 		borrowerList.remove(borrower.getId());
