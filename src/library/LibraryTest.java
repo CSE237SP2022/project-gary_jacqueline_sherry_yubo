@@ -81,6 +81,7 @@ class LibraryTest {
 	}
 	
 	@Test
+	//test if the system can remove the borrower
 	void testRemoveBorrower() {
 		Borrower person1 = new Borrower(21, "Jennie");
 		Borrower person2 = new Borrower(23, "Kathaway");
