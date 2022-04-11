@@ -108,7 +108,7 @@ class LibraryTest {
 		Mylibrary.addBook(book1);
 		Mylibrary.addBorrower(person1);
 		Mylibrary.borrowBook(book1.getId(), person1.getId());
-		assertTrue(book1.isBorrowed == true);
+		assertTrue(book1.isBorrowed() == true);
 		
 		
 		
@@ -123,7 +123,7 @@ class LibraryTest {
 		Mylibrary.addBorrower(person1);
 		Mylibrary.borrowBook(book1.getId(), person1.getId());
 		Mylibrary.returnBook(book1.getId());
-		assertTrue(book1.isBorrowed == false);
+		assertTrue(book1.isBorrowed() == false);
 	}
 	
 	
