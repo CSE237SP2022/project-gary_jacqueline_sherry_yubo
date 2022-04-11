@@ -113,7 +113,11 @@ public class Books {
     	this.borrowCount = borrowCount;
     }
     
-    
+    /*
+     * isBorrowed(): get isBorrowed number of object
+     * parameter: none
+     * return: isBorrowed
+     */
     public boolean isBorrowed() {
         return isBorrowed;
     }
