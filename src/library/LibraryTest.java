@@ -56,7 +56,7 @@ class LibraryTest {
 	}
 	
 	@Test
-	//test if someone borrow successfully.
+	//test if the system can add a borrower.
 	void testAddBorrower() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Borrower person2 = new Borrower(8, "Warren");
@@ -102,6 +102,7 @@ class LibraryTest {
 	}
 	
 	@Test
+	//test if a borrower can test a book
 	void testBorrowBook() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Books book1 = new Books("The Promise", 211, "English", 10, false, "Damon Galgut");
