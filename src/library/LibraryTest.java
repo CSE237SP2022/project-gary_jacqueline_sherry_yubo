@@ -40,8 +40,9 @@ class LibraryTest {
 	
 	
 	@Test
+	//test remove book, add one book first
 	void testRemoveBook() {
-		//test remove book, add one book first
+		
 		Books book4 = new Books("George and Lizzie", 290, "Germany", 5, false, "Nancy Pearl");
 		Library Mylibrary = new Library();
 		
@@ -55,6 +56,7 @@ class LibraryTest {
 	}
 	
 	@Test
+	//test if someone borrow successfully.
 	void testAddBorrower() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Borrower person2 = new Borrower(8, "Warren");
