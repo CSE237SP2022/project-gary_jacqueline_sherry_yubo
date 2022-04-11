@@ -29,7 +29,7 @@ public class Library {
 	}
 	
 	
-	
+	// This method is to remove borrower who returned book to library
 	public void removeBorrower(Borrower borrower) {
 		borrowerList.remove(borrower.getId());
 	}
