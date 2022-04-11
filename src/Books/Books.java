@@ -32,6 +32,11 @@ public class Books {
     	return name;
     }
     
+    /*
+     * setName(): set the name of object
+     * parameter: name
+     * return: none
+     */
     public void setName(String name) {
     	this.name = name;
     }
