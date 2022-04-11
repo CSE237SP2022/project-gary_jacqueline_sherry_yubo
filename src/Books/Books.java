@@ -86,6 +86,11 @@ public class Books {
     	return language;
     }
     
+    /*
+     * setLanguage(): set language of object
+     * parameter: language
+     * return: none
+     */
     public void setLanguage(String language) {
     	this.language = language;
     }
