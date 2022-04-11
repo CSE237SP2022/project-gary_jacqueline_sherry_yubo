@@ -95,6 +95,11 @@ public class Books {
     	this.language = language;
     }
     
+    /*
+     * getBorrowCount(): get BorrowCount of object
+     * parameter: none
+     * return: borrowCount
+     */
     public int getBorrowCount() {
     	return borrowCount;
     }
