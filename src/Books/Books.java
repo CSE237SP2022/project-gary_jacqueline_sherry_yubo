@@ -7,7 +7,7 @@ public class Books {
     private int id;	// unique identifier of the book
     private String language;
     private int borrowCount;
-    private boolean isBorrowed;
+    private boolean isBorrowed;//boolean to see the status of books
     
     /*
      * Constructor:
@@ -24,7 +24,9 @@ public class Books {
     }
     
     /*
-     * 
+     * getName(): get the name of object
+     * parameter: none
+     * return: name
      */
     public String getName() {
     	return name;
