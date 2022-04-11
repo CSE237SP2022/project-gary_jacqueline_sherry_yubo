@@ -34,6 +34,8 @@ public class Library {
 		borrowerList.remove(borrower.getId());
 	}
 	
+	
+	// This method is to record which book is borrowed.
 	public void borrowBook(Integer bookId, Integer borrowerId) {
 		if(borrowerList.containsKey(borrowerId) && bookList.containsKey(bookId)) {
 			Books book = bookList.get(bookId);
