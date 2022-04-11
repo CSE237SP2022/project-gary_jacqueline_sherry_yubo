@@ -5,7 +5,7 @@ public class Books {
 	private String name;
 	private String author;
     private int id;	// unique identifier of the book
-    private String language;
+    private String language;//language of this book
     private int borrowCount;//how many times the book is been borrowed
     private boolean isBorrowed;//boolean to see the status of books
     
