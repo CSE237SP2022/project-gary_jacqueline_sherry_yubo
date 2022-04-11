@@ -117,7 +117,7 @@ class LibraryTest {
 	}
 	
 	@Test
-	//test if the system can return the book
+	//test if the system can return the book successfully
 	void testReturnBook() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Books book1 = new Books("The Promise", 211, "English", 10, false, "Damon Galgut");
@@ -126,6 +126,7 @@ class LibraryTest {
 		Mylibrary.addBorrower(person1);
 		Mylibrary.borrowBook(book1.getId(), person1.getId());
 		Mylibrary.returnBook(book1.getId());
+		
 		assertTrue(book1.isBorrowed() == false);
 	}
 	
