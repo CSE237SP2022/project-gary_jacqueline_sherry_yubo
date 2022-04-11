@@ -96,7 +96,6 @@ class LibraryTest {
 		Mylibrary.removeBorrower(person3);
 		Mylibrary.removeBorrower(person2);
 		Mylibrary.removeBorrower(person1);
-		
 		assertTrue(Mylibrary.borrowerList.size()==0);
 
 	}
