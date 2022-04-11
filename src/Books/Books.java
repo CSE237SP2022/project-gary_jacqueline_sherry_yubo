@@ -11,10 +11,12 @@ public class Books {
     
     /*
      * Constructor:
-     * parameter: String name, int id, String language, int borrowCount, boolean isBorrowed, String author
+     * parameter: String name, int id, String language, int borrowCount, 
+     * boolean isBorrowed, String author
      * return: none
      */
-    public Books(String name, int id, String language, int borrowCount, boolean isBorrowed, String author) {
+    public Books(String name, int id, String language, int borrowCount, 
+    		boolean isBorrowed, String author) {
         this.name = name;
         this.author = author;
         this.id = id;
