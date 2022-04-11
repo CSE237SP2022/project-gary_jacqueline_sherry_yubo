@@ -50,6 +50,11 @@ public class Books {
     	return author;
     }
     
+    /*
+     * setAuthor(): get author of object
+     * parameter: author
+     * return: none
+     */
     public void setAuthor(String author) {
     	this.author = author;
     }
