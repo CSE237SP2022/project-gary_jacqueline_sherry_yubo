@@ -12,7 +12,8 @@ public class Library {
 		bookList = new HashMap<Integer, Books>();
 		borrowerList = new HashMap<Integer, Borrower>();
 	}
-		
+	
+	// This method is to store books into library
 	public void addBook(Books book) {
 		bookList.put(book.getId(), book);
 	}
