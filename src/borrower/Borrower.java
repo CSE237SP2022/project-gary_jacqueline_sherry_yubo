@@ -1,4 +1,6 @@
 package borrower;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Borrower {
 	int borrowerId; // a unique borrower id
