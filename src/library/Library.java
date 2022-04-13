@@ -12,23 +12,30 @@ public class Library {
 		bookList = new HashMap<Integer, Books>();
 		borrowerList = new HashMap<Integer, Borrower>();
 	}
-		
+	
+	// This method is to store books into library
 	public void addBook(Books book) {
 		bookList.put(book.getId(), book);
 	}
 	
+	// This method is to remove books from library
 	public void removeBook(Books book) {
 		bookList.remove(book.getId());
 	}	
 
+	// This method is to add borrower who borrowed books from library
 	public void addBorrower(Borrower borrower) {
 		borrowerList.put(borrower.getId(), borrower);
 	}
 	
+	
+	// This method is to remove borrower who returned books to library
 	public void removeBorrower(Borrower borrower) {
 		borrowerList.remove(borrower.getId());
 	}
 	
+	
+	// This method is to record which book is borrowed.
 	public void borrowBook(Integer bookId, Integer borrowerId) {
 		if(borrowerList.containsKey(borrowerId) && bookList.containsKey(bookId)) {
 			Books book = bookList.get(bookId);
@@ -49,6 +56,7 @@ public class Library {
 		return borrowerList;
 	}
 	
+	// This method is to record the book has been returned.
 	public void returnBook(Integer bookId) {
 		if(bookList.containsKey(bookId)) {
 			Books book = bookList.get(bookId);
