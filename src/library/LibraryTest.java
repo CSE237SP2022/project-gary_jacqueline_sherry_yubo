@@ -18,7 +18,7 @@ class LibraryTest {
 	@Test
 	void testAddBook() {
 
-		// create books
+		//test add books 
 		Books book1 = new Books("Surviving Savannah", 124, "English", 10, false, "Patti Callahan");
 		Books book2 = new Books("A Million Things", 123, "English", 15, false, "Emily Spurr");
 		Books book3 = new Books("The Code Breaker", 125, "English", 20, false, "Walter Isaacson");
@@ -40,10 +40,9 @@ class LibraryTest {
 	
 	
 	@Test
+	//test remove book, add one book first
 	void testRemoveBook() {
-//		Books book1 = new Books("The Promise", 211, "English", 10, false, "Damon Galgut");
-//		Books book2 = new Books("The Last Cuentista", 238, "English", 15, false, "Donna Barba Higuera");
-//		Books book3 = new Books("The Book of Lost Names", 285, "English", 20, false, "Kristin Harmel");
+		
 		Books book4 = new Books("George and Lizzie", 290, "Germany", 5, false, "Nancy Pearl");
 		Library Mylibrary = new Library();
 		
@@ -57,6 +56,7 @@ class LibraryTest {
 	}
 	
 	@Test
+	//test if the system can add a borrower.
 	void testAddBorrower() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Borrower person2 = new Borrower(8, "Warren");
@@ -81,6 +81,7 @@ class LibraryTest {
 	}
 	
 	@Test
+	//test if the system can remove the borrower
 	void testRemoveBorrower() {
 		Borrower person1 = new Borrower(21, "Jennie");
 		Borrower person2 = new Borrower(23, "Kathaway");
@@ -95,12 +96,12 @@ class LibraryTest {
 		Mylibrary.removeBorrower(person3);
 		Mylibrary.removeBorrower(person2);
 		Mylibrary.removeBorrower(person1);
-		
 		assertTrue(Mylibrary.borrowerList.size()==0);
 
 	}
 	
 	@Test
+	//test if a borrower can test a book
 	void testBorrowBook() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Books book1 = new Books("The Promise", 211, "English", 10, false, "Damon Galgut");
@@ -115,6 +116,7 @@ class LibraryTest {
 	}
 	
 	@Test
+	//test if the system can return the book successfully
 	void testReturnBook() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Books book1 = new Books("The Promise", 211, "English", 10, false, "Damon Galgut");
@@ -123,6 +125,7 @@ class LibraryTest {
 		Mylibrary.addBorrower(person1);
 		Mylibrary.borrowBook(book1.getId(), person1.getId());
 		Mylibrary.returnBook(book1.getId());
+		
 		assertTrue(book1.isBorrowed() == false);
 	}
 	
