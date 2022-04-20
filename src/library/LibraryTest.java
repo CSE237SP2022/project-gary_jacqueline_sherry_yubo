@@ -64,7 +64,8 @@ class LibraryTest {
 		assertTrue(Mylibrary2.bookList.containsValue(book12));
 		assertTrue(Mylibrary2.bookList.size()==8);
 		
-		
+		Library Mylibrary3 = new Library();
+		assertTrue(Mylibrary3.bookList.size()==0);
 	}
 	
 	
@@ -182,11 +183,19 @@ class LibraryTest {
 		Mylibrary.removeBorrower(person2);
 		Mylibrary.removeBorrower(person1);
 		assertTrue(Mylibrary.borrowerList.size()==0);
+		
+		Borrower person_a = new Borrower(102, "Gary");
+		Borrower person_b = new Borrower(103, "Jay");
+		Library Mylibrary1 = new Library();
+		Mylibrary1.addBorrower(person_a);
+		Mylibrary1.addBorrower(person_b);
+		Mylibrary1.removeBorrower(person_a);
+		assertTrue(Mylibrary1.borrowerList.size()==1);
 
 	}
 	
 	@Test
-	//test if a borrower can test a book
+	//test if a borrower can borrow a book
 	void testBorrowBook() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Books book1 = new Books("The Promise", 211, "English", 10, false, "Damon Galgut");
@@ -195,6 +204,29 @@ class LibraryTest {
 		Mylibrary.addBorrower(person1);
 		Mylibrary.borrowBook(book1.getId(), person1.getId());
 		assertTrue(book1.isBorrowed() == true);
+		assertTrue(book1.getBorrowCount() == 11);
+		
+		Borrower person2 = new Borrower(3, "George");
+		Borrower person3 = new Borrower(3, "George");
+		Books book2 = new Books("The Wind in the Willows", 4315, "English", 2, false, "Kenneth Grahame");
+		Books book3 = new Books("The Last of the Mohicans", 3451, "English", 5, false, "James Fenimore Cooper");
+		Books book4 = new Books("The Code Breaker", 125, "English", 20, false, "Walter Isaacson");
+		Books book5 = new Books("20,000 Leagues Under the Sea", 4226, "English",65, false, "Jules Verneh");
+		Library library = new Library();
+		library.addBook(book2);
+		library.addBook(book4);
+		library.addBook(book5);
+		library.addBorrower(person2);
+		library.addBorrower(person3);
+		library.borrowBook(book2.getId(), person2.getId());
+		library.borrowBook(book4.getId(), person2.getId());
+		library.borrowBook(book5.getId(), person3.getId());
+		assertTrue(book2.isBorrowed() == true);
+		assertTrue(book4.isBorrowed() == true);
+		assertTrue(book3.isBorrowed() == false);
+		assertTrue(book5.isBorrowed() == true);
+	
+
 		
 		
 		
@@ -210,8 +242,29 @@ class LibraryTest {
 		Mylibrary.addBorrower(person1);
 		Mylibrary.borrowBook(book1.getId(), person1.getId());
 		Mylibrary.returnBook(book1.getId());
-		
 		assertTrue(book1.isBorrowed() == false);
+		assertTrue(book1.getBorrowCount() == 11);
+		
+		Borrower person2 = new Borrower(102, "Gary");
+		Borrower person4 = new Borrower(22, "Josh");
+		Books book2 = new Books("The Last of the Mohicans", 3451, "English", 5, false, "James Fenimore Cooper");
+		Books book3 = new Books("The Code Breaker", 125, "English", 20, false, "Walter Isaacson");
+		Books book4 = new Books("20,000 Leagues Under the Sea", 4226, "English",65, false, "Jules Verneh");
+		Library library = new Library();
+		library.addBook(book2);
+		library.addBook(book3);
+		library.addBook(book4);
+		library.addBorrower(person2);
+		library.addBorrower(person4);
+		library.borrowBook(book4.getId(), person4.getId());
+		library.returnBook(book4.getId());
+		library.borrowBook(book2.getId(), person2.getId());
+		library.returnBook(book2.getId());
+		library.borrowBook(book3.getId(), person2.getId());
+		assertTrue(book2.isBorrowed() == false);
+		assertTrue(book3.isBorrowed() == true);
+		assertTrue(book4.isBorrowed() ==false);
+		
 	}
 	
 	
