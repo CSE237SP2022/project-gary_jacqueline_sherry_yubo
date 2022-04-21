@@ -1,10 +1,11 @@
 package borrower;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 public class Borrower {
 	int borrowerId; // a unique borrower id
 	String name;    // name of a borrower
+	Set<Integer> bookBorrowed;
 	
 	/*
 	 * Constructor
@@ -12,6 +13,7 @@ public class Borrower {
 	public Borrower(int id, String name) {
 		this.borrowerId = id;
 		this.name = name;
+		this.bookBorrowed = new HashSet<>();
 	}
 	
 	/*
@@ -34,4 +36,13 @@ public class Borrower {
 	public int getId() {
 		return this.borrowerId;
 	}
+	
+	/*
+	 * borrowBook: record the book that the user borrowed
+	 */
+	public void borrowBook(int bookId) {
+		bookBorrowed.add(bookId);
+	}
+	
+//	public void getBookBorrowed()
 }
