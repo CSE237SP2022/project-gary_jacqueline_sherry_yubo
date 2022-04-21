@@ -44,5 +44,10 @@ public class Borrower {
 		bookBorrowed.add(bookId);
 	}
 	
-//	public void getBookBorrowed()
+	/*
+	 * getBookBorrowed get the books that the user borrowed
+	 */
+	public Set<Integer> getBookBorrowed() {
+		return bookBorrowed;
+	}
 }
