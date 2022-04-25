@@ -5,15 +5,13 @@ public class Books {
 	private String name;
 	private String author;
     private int id;	// unique identifier of the book
-    private String language;//language of this book
-    private int borrowCount;//how many times the book is been borrowed
-    private boolean isBorrowed;//boolean to see the status of books
+    private String language; // language of this book
+    private int borrowCount; // how many times the book is been borrowed
+    private boolean isBorrowed; // boolean to see the status of books
+    private int borrowedBy; // borrower of this book
     
     /*
      * Constructor:
-     * parameter: String name, int id, String language, int borrowCount, 
-     * boolean isBorrowed, String author
-     * return: none
      */
     public Books(String name, int id, String language, int borrowCount, 
     		boolean isBorrowed, String author) {
@@ -23,12 +21,11 @@ public class Books {
         this.language = language;
         this.borrowCount = borrowCount;
         this.isBorrowed = false;
+        this.borrowedBy = -1;
     }
     
     /*
      * getName(): get the name of object
-     * parameter: none
-     * return: name
      */
     public String getName() {
     	return name;
@@ -36,8 +33,6 @@ public class Books {
     
     /*
      * setName(): set the name of object
-     * parameter: name
-     * return: none
      */
     public void setName(String name) {
     	this.name = name;
@@ -45,8 +40,6 @@ public class Books {
     
     /*
      * getAuthor(): get author of object
-     * parameter: none
-     * return: author
      */
     public String getAuthor() {
     	return author;
@@ -54,8 +47,6 @@ public class Books {
     
     /*
      * setAuthor(): get author of object
-     * parameter: author
-     * return: none
      */
     public void setAuthor(String author) {
     	this.author = author;
@@ -63,8 +54,6 @@ public class Books {
     
     /*
      * getId(): get id of object
-     * parameter: none
-     * return: id
      */
     public int getId() {
     	return id;
@@ -72,8 +61,6 @@ public class Books {
     
     /*
      * setId(): set ID of object
-     * parameter: id
-     * return: none
      */
     public void setId(int id) {
     	this.id = id;
@@ -81,8 +68,6 @@ public class Books {
 	
     /*
      * getLanguage(): get language of object
-     * parameter: none
-     * return: language 
      */
     public String getLanguage() {
     	return language;
@@ -90,8 +75,6 @@ public class Books {
     
     /*
      * setLanguage(): set language of object
-     * parameter: language
-     * return: none
      */
     public void setLanguage(String language) {
     	this.language = language;
@@ -99,8 +82,6 @@ public class Books {
     
     /*
      * getBorrowCount(): get BorrowCount of object
-     * parameter: none
-     * return: borrowCount
      */
     public int getBorrowCount() {
     	return borrowCount;
@@ -108,8 +89,6 @@ public class Books {
     
     /*
      * setBorrowCount(): set BorrowCount of object
-     * parameter: borrowCount
-     * return: none
      */
     public void setBorrowCount(int borrowCount) {
     	this.borrowCount = borrowCount;
@@ -117,8 +96,6 @@ public class Books {
     
     /*
      * isBorrowed(): get isBorrowed number of object
-     * parameter: none
-     * return: isBorrowed
      */
     public boolean isBorrowed() {
         return isBorrowed;
@@ -126,20 +103,35 @@ public class Books {
     
     /*
      * borrowBook(): add up borrowCount if isBorrowed set to true
-     * parameter: none
-     * return: none
      */
-    public void borrowBook() {
+    public void borrowBook(int borrower) {
     	isBorrowed = true;
     	borrowCount ++;
+        borrowedBy = borrower;
     }
     
     /*
      * returnBook(): set isBorrowed to false
-     * parameter: none
-     * return: none
      */
     public void returnBook() {
     	isBorrowed = false;
+        borrowedBy = -1;
+    }
+
+    /*
+     * getBorrower(): get the borrower for the current book
+     */
+    public int getBorrower() {
+        return borrowedBy;
+    }
+    
+    public void printInfo() {
+    	System.out.println("Name: "+name);
+    	System.out.println("id: "+id);
+    	System.out.println("language: "+language);
+    	System.out.println("count of borrows: "+borrowCount);
+    	System.out.println("is borrowed: "+isBorrowed);
+    	if(isBorrowed)
+    		System.out.println("borrowed by: "+borrowedBy);
     }
 }

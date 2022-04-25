@@ -44,10 +44,23 @@ public class Borrower {
 		bookBorrowed.add(bookId);
 	}
 	
+	public void returnBook(int bookId) {
+		bookBorrowed.remove(bookId);
+	}
+	
 	/*
 	 * getBookBorrowed get the books that the user borrowed
 	 */
 	public Set<Integer> getBookBorrowed() {
 		return bookBorrowed;
+	}
+	
+	public void printInfo() {
+    	System.out.println("Name: "+name);
+    	System.out.println("id: "+borrowerId);
+    	System.out.println("number of books borrowed: "+bookBorrowed.size());
+    	if(bookBorrowed.size()>0)
+    		for(int i : bookBorrowed)
+    			System.out.println("book borrowed: "+i);
 	}
 }
