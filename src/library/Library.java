@@ -40,7 +40,7 @@ public class Library {
 		if(borrowerList.containsKey(borrowerId) && bookList.containsKey(bookId)) {
 			Books book = bookList.get(bookId);
 			Borrower borrower = borrowerList.get(borrowerId);
-			book.borrowBook();
+			book.borrowBook(borrowerId);
 			System.out.println(borrower.getName() + " borrows " + book.getName());
 		}
 		else {
