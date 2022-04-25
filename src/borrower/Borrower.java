@@ -45,7 +45,8 @@ public class Borrower {
 	}
 	
 	public void returnBook(int bookId) {
-		bookBorrowed.remove(bookId);
+		if(bookBorrowed.contains(bookId))
+			bookBorrowed.remove(bookId);
 	}
 	
 	/*
