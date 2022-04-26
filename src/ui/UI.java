@@ -7,9 +7,14 @@ import java.io.*;
 import java.util.Arrays;
 
 public class UI {
+	// This program use only one Library object
 	public static Library lib = new Library();
 	
-	public static Boolean addBook(String bookInfo[]) {
+	/*
+	 * addBook: a helper function that takes a string array of book information
+	 * and create a new book object and add this object to the library object
+	 */
+	private static Boolean addBook(String bookInfo[]) {
 		// parse book info array
 		if(bookInfo.length != 4) {
 			System.out.println("invalid book info: "+Arrays.toString(bookInfo));
@@ -44,6 +49,10 @@ public class UI {
 		return true;
 	}
 	
+	/*
+	 * addBookFromInput: take a scanner object and create a book object based on the user
+	 * input and add the book object to the library by calling addBook
+	 */
 	public static void addBookFromInput(Scanner scan) {
 		String info = null;
         System.out.println("Input the info for the book in the form of: name,id,language,author");
@@ -56,7 +65,12 @@ public class UI {
         }
         addBook(info.split(","));
 	}
-	
+
+	/*
+	 * addBooksFromFile: take a scanner object and read from the file given by the user
+	 * input and create several books object based on the content in the file and add to
+	 * the library
+	 */
 	public static Boolean addBooksFromFile(Scanner scan) {
 		// read file path from the console
 		String path = null;
@@ -98,7 +112,11 @@ public class UI {
 		return true;
 	}
 	
-	public static Boolean addBorrower(String borrowerInfo[]) {
+	/*
+	 * addBorrower: a helper function that takes a string array of borrower information
+	 * and create a new borrower object and add this object to the library object
+	 */
+	private static Boolean addBorrower(String borrowerInfo[]) {
 		// parse borrower info array
 		if(borrowerInfo.length != 2) {
 			System.out.println("invalid borrower info: "+Arrays.toString(borrowerInfo));
@@ -131,6 +149,10 @@ public class UI {
 		return true;
 	}
 	
+	/*
+	 * addBorrowerFromInput: take a scanner object and create a borrower object based on the
+	 * user input and add the borrower object to the library by calling addBorrower
+	 */
 	public static void addBorrowerFromInput(Scanner scan) {
 		String info = null;
         System.out.println("Input the info for the borrower in the form of: name,id");
@@ -144,6 +166,11 @@ public class UI {
         addBorrower(info.split(","));
 	}
 	
+	/*
+	 * addBorrowerFromFile: take a scanner object and read from the file given by the user
+	 * input and create several borrowers object based on the content in the file and add to
+	 * the library
+	 */
 	public static Boolean addBorrowerFromFile(Scanner scan) {
 		// read file path from the console
 		String path = null;
@@ -185,6 +212,10 @@ public class UI {
 		return true;
 	}
 
+	/*
+	 * borrowBook: get the book id and borrower id from the user input and borrow book from
+	 * the library
+	 */
 	public static void borrowBook(Scanner scan) {
 		String borrower = null;
 		String book = null;
@@ -225,6 +256,10 @@ public class UI {
         lib.borrowBook(bookId, borrowerId);
 	}
 	
+	/*
+	 * returnBook: get the book id and borrower id from the user input and return book from
+	 * the library
+	 */
 	public static void returnBook(Scanner scan) {
 		String borrower = null;
 		String book = null;
@@ -266,6 +301,9 @@ public class UI {
         lib.returnBook(bookId, borrowerId);
 	}
 	
+	/*
+	 * printBookInfo: get the book id from the user input and print book info for that book
+	 */
 	public static void printBookInfo(Scanner scan) {
 		Books book = getBooks(scan);
 		if(book == null)
@@ -273,6 +311,10 @@ public class UI {
 		book.printInfo();
 	}
 	
+	/*
+	 * printBorrowerInfo: get the borrower id from the user input and print borrower info for
+	 * that borrower
+	 */
 	public static void printBorrowerInfo(Scanner scan) {
 		Borrower borrower = getBorrower(scan);
 		if(borrower == null)
@@ -280,6 +322,10 @@ public class UI {
 		borrower.printInfo();
 	}
 
+	/*
+	 * getBorrower: a helper function that returns a borrower object based on the borrower id
+	 * given by the user input.
+	 */
 	private static Borrower getBorrower(Scanner scan) {
 		String borrower = null;
 		int borrowerId = -1;
@@ -303,7 +349,11 @@ public class UI {
 			System.out.println("invalid borrower id");
 		return null;
 	}
-
+	
+	/*
+	 * getBooks: a helper function that returns a book object based on the book id
+	 * given by the user input.
+	 */
 	private static Books getBooks(Scanner scan) {
 		String book = null;
 		int bookId = -1;
@@ -328,6 +378,10 @@ public class UI {
 		return null;
 	}
 
+	/*
+	 * setBookInfo: ask user to update the book info by promoting user input for each section
+	 * of the book info except the book id.
+	 */
 	public static void setBookInfo(Scanner scan) {
 		Books book = getBooks(scan);
 		String author = null;
@@ -385,6 +439,10 @@ public class UI {
 		book.setBorrowCount(borrowCount);
 	}
 	
+	/*
+	 * setBorrowerInfo: ask user to update the borrower info by promoting user input for each
+	 * section of the borrower info except the borrower id.
+	 */
 	public static void setBorrowerInfo(Scanner scan) {
 		Borrower borrower = getBorrower(scan);
 		String name = null;
@@ -421,14 +479,34 @@ public class UI {
 			borrower.resetBorrowedBooks();
 	}
 
+	/*
+	 * getBooksList: print a list for book id and name for each book
+	 */
 	public static void getBooksList() {
 		for(int b : lib.getBooksList().keySet())
 			System.out.println("id: "+b+" name: "+lib.getBooksList().get(b).getName());
 	}
 
+	/*
+	 * getBorrowerList: print a list for borrower id and name for each borrower
+	 */
 	public static void getBorrowersList() {
 		for(int b : lib.getBorrowerList().keySet())
 			System.out.println("id: "+b+" name: "+lib.getBorrowerList().get(b).getName());
+	}
+	
+	/*
+	 * removeBook: remove a book from the library based on the book id that the user input
+	 */
+	public static void removeBook(Scanner scan) {
+        lib.removeBook(UI.getBooks(scan));
+	}
+	
+	/*
+	 * removeBorrower: remove a book from the library based on the borrower id that the user input
+	 */
+	public static void removeBorrower(Scanner scan) {
+        lib.removeBorrower(UI.getBorrower(scan));
 	}
 	
 	public static void selectAction(int choice, Scanner scan) {
@@ -468,6 +546,12 @@ public class UI {
 			break;
 		case 12:
 			getBorrowersList();
+			break;
+		case 13:
+			removeBook(scan);
+			break;
+		case 14:
+			removeBorrower(scan);
 			break;
 		default:
 			break;
