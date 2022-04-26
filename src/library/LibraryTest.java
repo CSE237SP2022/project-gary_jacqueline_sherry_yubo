@@ -71,7 +71,7 @@ class LibraryTest {
 	
 	@Test
 	//test remove book, add one book first
-	void testRemoveBook() {
+	void testRemoveBook() throws Exception{
 		
 		Books book13 = new Books("George and Lizzie", 290, "Germany", 5, false, "Nancy Pearl");
 		Library Mylibrary = new Library();
@@ -101,8 +101,14 @@ class LibraryTest {
 		Mylibrary2.removeBook(book18);
 		assertTrue(Mylibrary2.bookList.size()==1);
 		
+	
+		
+	
+		
 		
 	}
+	
+	
 	
 	@Test
 	//test if the system can add a borrower.
@@ -183,7 +189,6 @@ class LibraryTest {
 		Mylibrary.removeBorrower(person2);
 		Mylibrary.removeBorrower(person1);
 		assertTrue(Mylibrary.borrowerList.size()==0);
-		
 		Borrower person_a = new Borrower(102, "Gary");
 		Borrower person_b = new Borrower(103, "Jay");
 		Library Mylibrary1 = new Library();
@@ -241,7 +246,7 @@ class LibraryTest {
 		Mylibrary.addBook(book1);
 		Mylibrary.addBorrower(person1);
 		Mylibrary.borrowBook(book1.getId(), person1.getId());
-		Mylibrary.returnBook(book1.getId());
+		Mylibrary.returnBook(book1.getId(), person1.getId());
 		assertTrue(book1.isBorrowed() == false);
 		assertTrue(book1.getBorrowCount() == 11);
 		
@@ -257,13 +262,14 @@ class LibraryTest {
 		library.addBorrower(person2);
 		library.addBorrower(person4);
 		library.borrowBook(book4.getId(), person4.getId());
-		library.returnBook(book4.getId());
+		library.returnBook(book4.getId(), person4.getId());
 		library.borrowBook(book2.getId(), person2.getId());
-		library.returnBook(book2.getId());
+		library.returnBook(book2.getId(), person2.getId());
 		library.borrowBook(book3.getId(), person2.getId());
 		assertTrue(book2.isBorrowed() == false);
 		assertTrue(book3.isBorrowed() == true);
 		assertTrue(book4.isBorrowed() ==false);
+	
 		
 	}
 	
