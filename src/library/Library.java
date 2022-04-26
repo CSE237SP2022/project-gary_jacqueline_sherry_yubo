@@ -20,7 +20,13 @@ public class Library {
 	
 	// This method is to remove books from library
 	public void removeBook(Books book) {
+		try {
 		bookList.remove(book.getId());
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("The book does not in the library right now");
+		}
 	}	
 
 	// This method is to add borrower who borrowed books from library
@@ -31,7 +37,13 @@ public class Library {
 	
 	// This method is to remove borrower who returned books to library
 	public void removeBorrower(Borrower borrower) {
+		try {
 		borrowerList.remove(borrower.getId());
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("This borrower has already returned the book.");
+		}
 	}
 	
 	
