@@ -57,7 +57,7 @@ public class Library {
 		   System.out.println(borrower.getName() + " borrows " + book.getName());
 		  }
 		  else {
-			  System.out.println("Books are not on the list.");
+			  System.out.println("Books or borrowers are not on the list.");
 		  }
 		 }
 	

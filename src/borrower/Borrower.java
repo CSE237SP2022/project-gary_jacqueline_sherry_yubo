@@ -56,6 +56,10 @@ public class Borrower {
 		return bookBorrowed;
 	}
 	
+	public void resetBorrowedBooks() {
+		bookBorrowed.clear();
+	}
+	
 	public void printInfo() {
     	System.out.println("Name: "+name);
     	System.out.println("id: "+borrowerId);
