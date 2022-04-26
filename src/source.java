@@ -23,6 +23,8 @@ public class source {
 			System.out.println("10. modify borrower info");
 			System.out.println("11. get books list");
 			System.out.println("12. get borrowers list");
+			System.out.println("13. remove a book");
+			System.out.println("14. remove a borrower");
 			System.out.println(" q. quit");
 			
 	        System.out.println("Select an action from above:");
@@ -36,7 +38,7 @@ public class source {
 	        
 	        try {
 				choice = Integer.parseInt(inp);
-				if((choice < 1) || (choice > 12)) {
+				if((choice < 1) || (choice > 14)) {
 					System.out.println("invalid choice: "+inp);
 			        continue;
 				}
