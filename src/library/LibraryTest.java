@@ -241,7 +241,7 @@ class LibraryTest {
 		Mylibrary.addBook(book1);
 		Mylibrary.addBorrower(person1);
 		Mylibrary.borrowBook(book1.getId(), person1.getId());
-		Mylibrary.returnBook(book1.getId());
+		Mylibrary.returnBook(book1.getId(), person1.getId());
 		assertTrue(book1.isBorrowed() == false);
 		assertTrue(book1.getBorrowCount() == 11);
 		
@@ -257,9 +257,9 @@ class LibraryTest {
 		library.addBorrower(person2);
 		library.addBorrower(person4);
 		library.borrowBook(book4.getId(), person4.getId());
-		library.returnBook(book4.getId());
+		library.returnBook(book4.getId(), person4.getId());
 		library.borrowBook(book2.getId(), person2.getId());
-		library.returnBook(book2.getId());
+		library.returnBook(book2.getId(), person2.getId());
 		library.borrowBook(book3.getId(), person2.getId());
 		assertTrue(book2.isBorrowed() == false);
 		assertTrue(book3.isBorrowed() == true);
