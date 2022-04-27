@@ -100,9 +100,6 @@ class LibraryTest {
 		Mylibrary2.removeBook(book18);
 		assertTrue(Mylibrary2.bookList.size()==1);
 		
-	
-		
-	
 		
 		
 	}
@@ -130,8 +127,7 @@ class LibraryTest {
 		assertTrue(Mylibrary.borrowerList.containsKey(9));
 		assertTrue(Mylibrary.borrowerList.containsKey(11));
 		assertTrue(Mylibrary.borrowerList.size()==4);
-		
-		
+				
 		Borrower person5 = new Borrower(33, "Gary");
 		Borrower person6 = new Borrower(81, "Jacky");
 		Borrower person7 = new Borrower(95, "Jacqueline");
@@ -197,7 +193,6 @@ class LibraryTest {
 	}
 	
 	@Test
-	//test if a borrower can borrow a book
 	void testBorrowBook() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Books book1 = new Books("The Promise", 211, "English", 10, false, "Damon Galgut");
