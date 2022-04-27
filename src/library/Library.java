@@ -24,7 +24,6 @@ public class Library {
 		bookList.remove(book.getId());
 		}
 		catch(Exception e) {
-//			e.printStackTrace();
 			System.out.println("The book does not in the library right now");
 		}
 	}	
@@ -41,7 +40,6 @@ public class Library {
 		borrowerList.remove(borrower.getId());
 		}
 		catch (Exception e) {
-//			e.printStackTrace();
 			System.out.println("This borrower has already returned the book.");
 		}
 	}

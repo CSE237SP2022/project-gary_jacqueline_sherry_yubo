@@ -18,7 +18,7 @@ class LibraryTest {
 	@Test
 	void testAddBook() {
 
-		//test add books 
+
 		Books book1 = new Books("Surviving Savannah", 124, "English", 10, false, "Patti Callahan");
 		Books book2 = new Books("A Million Things", 123, "English", 15, false, "Emily Spurr");
 		Books book3 = new Books("The Code Breaker", 125, "English", 20, false, "Walter Isaacson");
@@ -70,7 +70,6 @@ class LibraryTest {
 	
 	
 	@Test
-	//test remove book, add one book first
 	void testRemoveBook() throws Exception{
 		
 		Books book13 = new Books("George and Lizzie", 290, "Germany", 5, false, "Nancy Pearl");
@@ -101,9 +100,6 @@ class LibraryTest {
 		Mylibrary2.removeBook(book18);
 		assertTrue(Mylibrary2.bookList.size()==1);
 		
-	
-		
-	
 		
 		
 	}
@@ -111,7 +107,6 @@ class LibraryTest {
 	
 	
 	@Test
-	//test if the system can add a borrower.
 	void testAddBorrower() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Borrower person2 = new Borrower(8, "Warren");
@@ -132,8 +127,7 @@ class LibraryTest {
 		assertTrue(Mylibrary.borrowerList.containsKey(9));
 		assertTrue(Mylibrary.borrowerList.containsKey(11));
 		assertTrue(Mylibrary.borrowerList.size()==4);
-		
-		
+				
 		Borrower person5 = new Borrower(33, "Gary");
 		Borrower person6 = new Borrower(81, "Jacky");
 		Borrower person7 = new Borrower(95, "Jacqueline");
@@ -173,7 +167,6 @@ class LibraryTest {
 	}
 	
 	@Test
-	//test if the system can remove the borrower
 	void testRemoveBorrower() {
 		Borrower person1 = new Borrower(21, "Jennie");
 		Borrower person2 = new Borrower(23, "Kathaway");
@@ -200,7 +193,6 @@ class LibraryTest {
 	}
 	
 	@Test
-	//test if a borrower can borrow a book
 	void testBorrowBook() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Books book1 = new Books("The Promise", 211, "English", 10, false, "Damon Galgut");
@@ -233,12 +225,9 @@ class LibraryTest {
 	
 
 		
-		
-		
 	}
 	
 	@Test
-	//test if the system can return the book successfully
 	void testReturnBook() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Books book1 = new Books("The Promise", 211, "English", 10, false, "Damon Galgut");
