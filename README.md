@@ -87,7 +87,7 @@ Example input:<br/>
 input:2<br/>
 input:Bible,11,English,Moses (no spaces)<br/> 
 input:3<br/>
-input:Bob,1<br/>   
+input:Bob,1(no spaces)<br/>   
 input:q   
 
 
