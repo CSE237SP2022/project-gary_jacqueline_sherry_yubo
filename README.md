@@ -1,4 +1,4 @@
-# Iteration 2 - Update:
+# Iteration 3 - Update:
 
 
 # Description: 
@@ -83,12 +83,12 @@ Choose an action from the following list:
 
 Select an action from above:
 
-Example input:
-input:2
-input:Bible,11,English,Moses (no spaces)
-input:3
-input:Bob,1
-input:q
+Example input:<br/>
+input:2<br/>
+input:Bible,11,English,Moses (no spaces)<br/> 
+input:3<br/>
+input:Bob,1<br/>   
+input:q   
 
 
 
