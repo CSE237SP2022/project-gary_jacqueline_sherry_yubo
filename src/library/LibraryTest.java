@@ -16,7 +16,6 @@ class LibraryTest {
 
 
 	@Test
-
 	void testAddBook() {
 
 
@@ -71,7 +70,6 @@ class LibraryTest {
 	
 	
 	@Test
-	//test remove book, add one book first
 	void testRemoveBook() throws Exception{
 		
 		Books book13 = new Books("George and Lizzie", 290, "Germany", 5, false, "Nancy Pearl");
@@ -112,7 +110,6 @@ class LibraryTest {
 	
 	
 	@Test
-	//test if the system can add a borrower.
 	void testAddBorrower() {
 		Borrower person1 = new Borrower(2, "Jackson");
 		Borrower person2 = new Borrower(8, "Warren");
@@ -174,7 +171,6 @@ class LibraryTest {
 	}
 	
 	@Test
-	//test if the system can remove the borrower
 	void testRemoveBorrower() {
 		Borrower person1 = new Borrower(21, "Jennie");
 		Borrower person2 = new Borrower(23, "Kathaway");
