@@ -51,19 +51,19 @@ Here is the Menu you will see when run the system:
 
 Choose an action from the following list:
 
- 1. add book from file
+ 1. add book from file --(Input the path of the target documents. The documents should include the information of a book. The program will read the document and check if there is correct information.)
 
- 2. add book from input
+ 2. add book from input --(Input the information of a book manually to add a book into the system.)
 
- 3. add borrower from file
+ 3. add borrower from file --(Input the path of the target documents. The documents should include the information of a borrower. The program will read the document and check if there is correct information.)
 
- 4. add borrower from input
+ 4. add borrower from input --(Input the information of a borrower manually to add a borrower into the system.)
 
- 5. borrow book
+ 5. borrow book -- (borrow the book)
 
- 6. return book
+ 6. return book --(return the book)
 
- 7. print book info
+ 7. print book info 
 
  8. print borrower info
 
