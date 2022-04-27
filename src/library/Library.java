@@ -40,7 +40,6 @@ public class Library {
 		borrowerList.remove(borrower.getId());
 		}
 		catch (Exception e) {
-//			e.printStackTrace();
 			System.out.println("This borrower has already returned the book.");
 		}
 	}
